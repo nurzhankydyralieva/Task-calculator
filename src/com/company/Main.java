@@ -1,12 +1,20 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
+    public final Arabic arabic = new Arabic();
+
+    public String calculate(String inputLine) {
+        return arabic.execute(inputLine);
+    }
 
     public static void main(String[] args) {
-        Arabic arabic = new Arabic();
-        arabic.getNum();
-        RomanArabicConverter romanArabicConverter = new RomanArabicConverter();
-        romanArabicConverter.getRomanNum();
-//        arabic.getTwoOperation();
+        System.out.println("Введите два числа \nInput:");
+        Scanner scanner = new Scanner(System.in);
+        Main main = new Main();
+        String inputLine = scanner.nextLine();
+        System.out.println(main.calculate(inputLine));
+
     }
 }
